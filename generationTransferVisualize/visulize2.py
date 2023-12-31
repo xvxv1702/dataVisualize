@@ -37,7 +37,8 @@ groupIds = []
 for i in data:
     groupIds.append(int(i))
 
-colorList = ['#4C4A59', '#1B7F7A', '#0897B4', '#F2CDAC', '#4CABA6']
+# colorList = ['#4C4A59', '#1B7F7A', '#0897B4', '#F2CDAC', '#4CABA6']
+colorList = ['#4C4A59', '#1D8058', '#0897B4', '#F5BA8D', '#4CABA6']
 groups = ['LShape', 'UShape', 'Base', 'Other']
 
 fig = plt.figure(figsize=(10, 8))
@@ -76,5 +77,6 @@ for i in range(group_count):
         plt.xticks([])
         plt.yticks([])
 
-
+#调节间距
+plt.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.1, hspace=0.2)
 plt.show()
