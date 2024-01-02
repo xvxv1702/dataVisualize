@@ -2,10 +2,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-path = r"D:\learn\research\optimization\result\20231223_四种群每代迁移0.5更新0.3变异排序后更新\result.csv"
+path = r"D:\learn\research\optimization\result\RunTimeDataset\result.csv"
 pop_count = 4 #种群数量
 pop_size = 25#子种群大小
-max_generation = 3000
+max_generation = 500
 # title =
 # 绘图
 # 1. 确定画布
@@ -39,6 +39,33 @@ plt.scatter(x,  # 横坐标
             label='Individual',# 标签 即为点代表的意思
             s = 0.05)  #点的大小
 
+#绘制平均fitness
+data = np.loadtxt(open(path,"rb"),
+                  delimiter=",",#分隔符
+                  skiprows=1,#跳过前n行
+                  usecols=range(4,4+pop_size))#读取的列的范围
+
+x2 = []
+y2 = []
+
+for i in range(generation):
+    if i >= max_generation :
+        break
+    sum = 0.0
+    for j in range(id_count):
+        sum += data[i][j]
+    equalFitness = sum / id_count;
+    y2.append(equalFitness)
+    x2.append(i)
+
+plt.plot(x2, #横轴值
+         y2,#纵轴值
+         'r*-', #'bo-'表示蓝色实线，数据点实心原点标注,'s'方块,'o'实心圆点，'*'五角星
+         alpha=0.5,#透明度
+         linewidth=1,#线的宽度
+         label='EqualFitness',#标签
+         markersize = 1
+         )
 
 #绘制最大fitness
 data = np.loadtxt(open(path,"rb"),
@@ -99,7 +126,7 @@ plt.grid(True)#显示网格背景
 #坐标轴范围
 plt.ylim((0,7))
 plt.xlim((0,max_generation))
-#坐标轴名字
+#坐标轴名字000000
 plt.xlabel("Generation",fontsize = 12)
 plt.ylabel("Fitness",fontsize = 12)
 #标题
