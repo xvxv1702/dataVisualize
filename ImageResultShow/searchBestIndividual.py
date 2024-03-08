@@ -3,11 +3,11 @@ import os
 import numpy as np
 import csv
 
-root = r"D:\learn\research\optimization\result\20240101ImageResultShow"
-pop_count = 4  # 种群数量
-pop_size = 25  # 子种群大小
+root = r"D:\learn\research\experiment\result\20240220ushape"
+pop_count = 1  # 种群数量
+pop_size = 100  # 子种群大小
 gene_length = 30  # gene长度
-max_generation = 25
+max_generation = 450
 
 
 # 搜索并写入表格

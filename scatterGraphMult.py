@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 path = r"D:\learn\research\optimization\result\RunTimeDataset\result.csv"
-pop_count = 4 #种群数量
-pop_size = 25#子种群大小
-max_generation = 500
+pop_count = 6 #种群数量
+pop_size = 20#子种群大小
+max_generation = 1500
 # title =
 # 绘图
 # 1. 确定画布
@@ -21,7 +21,7 @@ generation = int(len(data)/pop_count)
 id_count = len(data[0])
 
 
-colors = ['blue','yellow','magenta','cyan','black']
+colors = ['blue','yellow','magenta','cyan','black', 'tomato','yellowgreen']
 x = []
 y = []
 for m in range(pop_count):
@@ -75,7 +75,7 @@ data = np.loadtxt(open(path,"rb"),
 
 generation = int(len(data)/pop_count)
 
-styles = ['bo-','yo-','mo-','co-','ko-','mo-','yo-']
+styles = ['bo-','yo-','mo-','co-','ko-','go-','ro-']
 for m in range(pop_count):
     x1 = []
     y1 = []
@@ -124,8 +124,8 @@ plt.plot(x2, #横轴值
 plt.legend()  # 显示图例
 plt.grid(True)#显示网格背景
 #坐标轴范围
-plt.ylim((0,7))
-plt.xlim((0,max_generation))
+# plt.ylim((3,6))
+#plt.xlim((0,max_generation))
 #坐标轴名字000000
 plt.xlabel("Generation",fontsize = 12)
 plt.ylabel("Fitness",fontsize = 12)

@@ -2,9 +2,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# path = r"D:\learn\research\optimization\result\RunTimeDataset\result.csv"
-path = r"D:\learn\research\optimization\result\20231230不同更新率对比\0.8更新result.csv"
-max_generation = 500
+path = r"D:\learn\research\optimization\result\RunTimeDataset\result.csv"
+# path = r"D:\learn\research\optimization\result\20231230不同更新率对比\0.8更新result.csv"
+max_generation = 450
 title = "updateRate:0.8"
 
 # 1. 确定画布
@@ -113,13 +113,13 @@ plt.plot(x1, #横轴值
 plt.legend()  # 显示图例
 plt.grid(False)#显示网格背景
 #坐标轴范围
-plt.ylim((0,7))
-plt.xlim((0,max_generation))
+plt.ylim((3,6.5))
+# plt.xlim((0,max_generation))
 #坐标轴名字
 plt.xlabel("Generation",fontsize = 12)
 plt.ylabel("Fitness",fontsize = 12)
 #标题
-plt.title(title)
+# plt.title(title)
 #调节间距
 plt.subplots_adjust(left=0.1, bottom=0.15, right=0.9, top=0.85, wspace=0.1, hspace=0.1)
 plt.legend(loc='upper left')
