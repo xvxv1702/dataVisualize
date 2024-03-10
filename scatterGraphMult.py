@@ -5,7 +5,7 @@ import numpy as np
 path = r"D:\learn\research\optimization\result\RunTimeDataset\result.csv"
 pop_count = 6 #种群数量
 pop_size = 20#子种群大小
-max_generation = 1500
+max_generation = 500
 # title =
 # 绘图
 # 1. 确定画布
@@ -22,6 +22,7 @@ id_count = len(data[0])
 
 
 colors = ['blue','yellow','magenta','cyan','black', 'tomato','yellowgreen']
+pop_names = ["LShape", "Ushape", "basic", "other", "parShape", "withYard"]
 x = []
 y = []
 for m in range(pop_count):
@@ -36,8 +37,9 @@ for m in range(pop_count):
 plt.scatter(x,  # 横坐标
             y,  # 纵坐标
             c='gray',  # 点的颜色
+            alpha=0.5,#透明度
             label='Individual',# 标签 即为点代表的意思
-            s = 0.05)  #点的大小
+            s = 0.01)  #点的大小
 
 #绘制平均fitness
 data = np.loadtxt(open(path,"rb"),
@@ -75,7 +77,7 @@ data = np.loadtxt(open(path,"rb"),
 
 generation = int(len(data)/pop_count)
 
-styles = ['bo-','yo-','mo-','co-','ko-','go-','ro-']
+styles = ['b-','y-','m-','c-','k-','d-','g-']
 for m in range(pop_count):
     x1 = []
     y1 = []
@@ -86,13 +88,14 @@ for m in range(pop_count):
         y1.append(data[raw])
         x1.append(i)
 
-    label = 'group'+str(m)
+    # label = 'group'+str(m)
+    label = pop_names[m]
     style = styles[m]
     plt.plot(x1, #横轴值
              y1,#纵轴值
              style, #'bo-'表示蓝色实线，数据点实心原点标注,'s'方块,'o'实心圆点，'*'五角星
-             alpha=0.5,#透明度
-             linewidth=1,#线的宽度
+             alpha=1,#透明度
+             linewidth=1.5,#线的宽度
              label=label,#标签
              markersize = 1
              )

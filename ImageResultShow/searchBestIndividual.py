@@ -3,11 +3,11 @@ import os
 import numpy as np
 import csv
 
-root = r"D:\learn\research\experiment\result\20240220ushape"
-pop_count = 1  # 种群数量
-pop_size = 100  # 子种群大小
+root = r"D:\learn\research\optimization\result\20240310六种群优化0.4更新0.3变异"
+pop_count = 6  # 种群数量
+pop_size = 20  # 子种群大小
 gene_length = 30  # gene长度
-max_generation = 450
+max_generation = 500
 
 
 # 搜索并写入表格
@@ -16,7 +16,7 @@ def search(group: int):
     fitness_list = []
     fitness_index_list = []
     for i in range(data.shape[0]):
-        rest = i % 100
+        rest = i % (pop_count * pop_size)
         if (group + 1) * pop_size > rest >= group * pop_size:
             fitness_list.append(data[i][3])
             fitness_index_list.append(i)
