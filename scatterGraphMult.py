@@ -5,7 +5,7 @@ import numpy as np
 path = r"D:\learn\research\optimization\result\RunTimeDataset\result.csv"
 pop_count = 6 #种群数量
 pop_size = 20#子种群大小
-max_generation = 500
+max_generation = 3000
 # title =
 # 绘图
 # 1. 确定画布

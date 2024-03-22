@@ -3,11 +3,11 @@ import os
 import numpy as np
 import csv
 
-root = r"D:\learn\research\optimization\result\20240310六种群优化0.4更新0.3变异"
+root = r"D:\learn\research\optimization\result\20240321六种群0.4更新0.3变异"
 pop_count = 6  # 种群数量
 pop_size = 20  # 子种群大小
 gene_length = 30  # gene长度
-max_generation = 500
+max_generation = 200
 
 
 # 搜索并写入表格
